@@ -1,0 +1,96 @@
+body {
+  background: rgb(231, 231, 231);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+}
+nav img {
+  object-fit: contain;
+  margin-left: 5%;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin-right: 5%;
+}
+nav :not(img) {
+  border-radius: 50px;
+  background-color: rgba(255, 213, 0, 1);
+  padding: 5px;
+  padding-left: 50px;
+  padding-right: 50px;
+  transition: all 0.7s;
+}
+nav :not(img):hover {
+  box-shadow: rgba(0, 0, 0, 0.767) 0px 5px 20px -5px;
+  transition: all 0.3s;
+}
+
+#main-title {
+  margin: 0px;
+  margin-left: 2%;
+  font-weight: bold;
+  font-size: larger;
+  word-spacing: 3px;
+}
+#add-note {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px;
+  padding: 10px;
+  padding-left: 13px;
+  padding-right: 13px;
+  text-align: center;
+}
+#notes {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 5vh;
+}
+.note-container {
+  background-color: rgb(255, 255, 255);
+  margin-top: 15px;
+  width: 20%;
+  min-width: min-content;
+  border-radius: 5px;
+  margin-left: 3.4%;
+  padding: 0px;
+  transition: all 1s;
+}
+.note-header {
+  margin-top: 15px;
+  padding: 5px;
+  padding-left: 15px;
+  border-left: solid 3px;
+}
+.note-header h3,
+p {
+  margin: 0px;
+}
+.note-header p {
+  font-size: 14px;
+}
+.note-content {
+  padding: 15px;
+}
+.delete-button:hover {
+  cursor: pointer;
+}
+.stars {
+  position: relative;
+}
+.important-filled {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+.important-filled:hover {
+  opacity: 0.7;
+  transition: all 0.6s;
+  cursor: pointer;
+}
