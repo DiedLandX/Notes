@@ -10,23 +10,25 @@ function Note() {
       </div>
       <div className="note-content">
         <p>Description:This is the decription of the note</p>
-        <div className="stars">
-          <img
-            width={18}
-            height={18}
-            className="important-empty"
-            src={important_empty_icon}
-            alt=""
-          />{" "}
-          <img
-            width={18}
-            height={18}
-            className="important-filled"
-            src={important_icon}
-            alt=""
-          />
+        <div className="buttons-container">
+          <div className="stars">
+            <img
+              width={18}
+              height={18}
+              className="important-empty"
+              src={important_empty_icon}
+              alt=""
+            />{" "}
+            <img
+              width={18}
+              height={18}
+              className="important-filled"
+              src={important_icon}
+              alt=""
+            />
+          </div>
+          <img className="delete-button" src={delete_icon} alt="" />
         </div>
-        <img className="delete-button" src={delete_icon} alt="" />
       </div>
     </div>
   );

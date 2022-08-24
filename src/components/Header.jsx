@@ -1,11 +1,16 @@
 import note from "../note.png";
 import plusSign from "../add.png";
+import Note from "./Note";
 function Header() {
+  function showPopUp() {
+    document.getElementById("popup-bg").style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
   return (
     <nav>
       <img src={note} alt="" />
       <p id="main-title">Notes for EveryOne!</p>
-      <a id="add-note" href="#">
+      <a id="add-note" href="#" onClick={() => showPopUp()}>
         <img
           src={plusSign}
           alt=""
