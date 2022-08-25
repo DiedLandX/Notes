@@ -1,15 +1,15 @@
 import delete_icon from "../deleteIcon.svg";
 import important_icon from "../importantIcon.svg";
 import important_empty_icon from "../star.svg";
-function Note() {
+function Note({ noteTitle, noteDescription, noteDate, deleteNoteFn, listId }) {
   return (
     <div className="note-container">
       <div className="note-header">
-        <h3>Title of the note</h3>
-        <p>2022.08.21</p>
+        <h3>{noteTitle}</h3>
+        <p>{noteDate}</p>
       </div>
       <div className="note-content">
-        <p>Description:This is the decription of the note</p>
+        <p>{noteDescription}</p>
         <div className="buttons-container">
           <div className="stars">
             <img
@@ -27,7 +27,14 @@ function Note() {
               alt=""
             />
           </div>
-          <img className="delete-button" src={delete_icon} alt="" />
+          <img
+            className="delete-button"
+            src={delete_icon}
+            alt=""
+            onClick={() => {
+              deleteNoteFn(listId);
+            }}
+          />
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ body {
 nav {
   position: sticky;
   top: 0;
-  background-color: rgba(231, 231, 231, 0.8);
+  background-color: rgba(231, 231, 231, 1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,6 +123,7 @@ p {
   height: 100vh;
   top: 0;
   background-color: rgba(99, 90, 90, 0.238);
+  z-index: 2;
 }
 #popup-container button {
   border: solid rgba(0, 0, 0, 1);
@@ -159,7 +160,6 @@ p {
   margin: auto;
   border-radius: 10px;
   background-color: rgba(255, 213, 0, 1);
-  z-index: 1;
 }
 .note-field {
   border: 1px solid black;

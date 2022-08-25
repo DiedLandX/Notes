@@ -1,9 +1,13 @@
-import Note from "./Note";
+import { useState } from "react";
 
 function AddPopUp({ addNote }) {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState(new Date().toDateString());
+
   function hidePopUp() {
     document.getElementById("popup-bg").style.display = "none";
-    document.body.style.overflow = "scroll";
+    document.body.style.overflow = "auto";
   }
   return (
     <div
@@ -18,24 +22,30 @@ function AddPopUp({ addNote }) {
           id="add-title"
           type="text"
           className="note-field"
+          onChange={(e) => {
+            setTitle(e.target.value);
+          }}
           placeholder="Type here the title..."
         />
-
         <label htmlFor="add-date">What's the date?</label>
-        <input id="add-date" type="date" className="note-field" />
-
-        <label htmlFor="add-description">What's the description?</label>
+        <input
+          id="add-date"
+          type="date"
+          className="note-field"
+          onChange={(e) => setDate(e.target.value)}
+        />
+        ,<label htmlFor="add-description">What's the description?</label>
         <textarea
           name=""
           id="add-description"
           cols="30"
           rows="10"
+          onChange={(e) => setDescription(e.target.value)}
           className="note-field"
         ></textarea>
         <button
           onClick={() => {
-            addNote(<Note></Note>);
-            hidePopUp();
+            if (addNote(title, description, date)) hidePopUp();
           }}
         >
           Add Note
